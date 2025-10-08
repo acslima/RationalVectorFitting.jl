@@ -1,3 +1,5 @@
+cd(@__DIR__)
+
 @testset "ex3" begin
     fid1 = split.(readlines("03PK10.txt"))
     f = zeros(ComplexF64, 160)

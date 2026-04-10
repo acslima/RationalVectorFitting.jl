@@ -15,9 +15,9 @@ end
 
 t0 = t[1]
 t = t[31:end] .- t0
-vout = vout[31:end]
+vout = vout[31:end] - 0.3  # remove offset
 
-n = 70  # order
+n = 95  # order
 init_poles = -exp10.(range(0, 9, length = n))
 
 dt = t[2] - t[1]
@@ -28,7 +28,7 @@ vin = zeros(nt)
 vin[2] = 1 / dt
 #vin .+= 1e-12  # to avoid 1/0
 
-niter = 50
+niter = 25
 has_direct_feedthrough = true
 formula = "recursive"
 poles = qpol = init_poles
